@@ -1,281 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>TEXPERT ACADEMY</title>
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #38bdf8;
-        }
-        section {
-            background: #020617;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>TEXPERT ACADEMY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    nav button {
+      background: #1e293b;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    nav button.active {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    section {
+      display: none;
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
+
 <body>
 
 <h1>TEXPERT ACADEMY</h1>
 <p>University Science Courses – Notes & Outlines</p>
 
-
-<section id="cos101">
-  <h2>COS 101 – Introduction to Computer Science</h2>
-    
-<ul>
-<li>Description of basic Component of a computer</li>
-      <li>Input/output devices and peripherals</li>
-      <li>Hardware i.e. Software and human wares</li>
-      <li>Buses and growing computers through digital applies</li>
-      <li>Information processing and its roles to the Society</li>
-      <li>Internets and its application</li>
-      <li>Impacts of internet</li>
-      <li>Programmes of computing</li>
-      <li>Features of computing</li>
-    </ul>
-  </section>
-
-  <section id="bio101">
-    <h2>BIO 101 - Biology 101 Topics</h2>
-    <ul>
-      <li>Interrelationships of organism Commensalism</li>
-      <li>Competition, mutualism, Parasitism, Saprophytism</li>
-      <li>Symbiosis</li>
-      <li>Element of ecology and types of habitat</li>
-      <li>Cell structure and organisation</li>
-      <li>Theory and evolution: Introduction to Darwin and Lamarkism, Mendelian law</li>
-      <li>Characteristics and classification of living thing</li>
-      <li>General Reproduction</li>
-      <li>Functions of Cellular organelles</li>
-      <li>Chromosomes, genes, Relationships and importance, key genetic terms</li>
-    </ul>
-  </section>
-
-  <section id="chm101">
-    <h2>CHM 101 - Chemistry 101 Topics</h2>
-    <ul>
-      <li>Atoms, molecules, Element of compounds</li>
-
-text-align: center;
-    padding: 1rem;
-    background: #111;
-    color: #888;
-    margin-top: 2rem;
-  }
-</style>
-</head>
-<body>
-
-<header>TËXPËRT ÃCÅDÈMY</header>
-
 <nav>
-  <button class="active" data-target="phy101">PHY 101</button>
-  <button data-target="sta101">STA 101</button>
-  <button data-target="mth101">MTH 101</button>
-  <button data-target="cos101">COS 101</button>
-  <button data-target="bio101">BIO 101</button>
-  <button data-target="chm101">CHM 101</button>
-  <button data-target="gst111">GST 111</button>
-  <button data-target="gns105">GNS 105</button>
-  <button data-target="gst">GST</button>
+  <button class="active" onclick="showSection('cos101')">COS 101</button>
+  <button onclick="showSection('phy101')">PHY 101</button>
+  <button onclick="showSection('sta101')">STA 101</button>
+  <button onclick="showSection('mth101')">MTH 101</button>
+  <button onclick="showSection('bio101')">BIO 101</button>
+  <button onclick="showSection('chm101')">CHM 101</button>
+  <button onclick="showSection('gst111')">GST 111</button>
+  <button onclick="showSection('gns105')">GNS 105</button>
 </nav>
 
-<main>
-  <section id="phy101" class="active">
-    <h2>PHY 101 - Physics 101 Topics</h2>
-    <ul>
-      <li>Space and time</li>
-      <li>Units and dimension</li>
-      <li>Vectors and scalars</li>
-      <li>Differentiation of vectors</li>
-      <li>Newton's law</li>
-      <li>Equation of motion</li>
-      <li>Confinement principles in ply</li>
-      <li>System of particles</li>
-      <li>Centre of mass</li>
-      <li>Rotational motion</li>
-      <li>Polar coordinates</li>
-      <li>Conservation of angular momentum</li>
-      <li>Circular motion</li>
-      <li>Moment of inertia</li>
-    </ul>
-  </section>
+<section id="cos101" class="active">
+  <h2>COS 101 – Introduction to Computer Science</h2>
+  <ul>
+    <li>Description of basic components of a computer</li>
+    <li>Input/output devices and peripherals</li>
+    <li>Hardware, software and humanware</li>
+    <li>Buses and digital applications</li>
+    <li>Information processing and society</li>
+    <li>Internet and its applications</li>
+    <li>Impacts of internet</li>
+    <li>Programmes of computing</li>
+    <li>Features of computing</li>
+  </ul>
+</section>
 
-  <section id="sta101">
+<section id="phy101">
+  <h2>PHY 101 – Physics</h2>
+  <ul>
+    <li>Space and time</li>
+    <li>Units and dimensions</li>
+    <li>Vectors and scalars</li>
+    <li>Newton’s laws</li>
+    <li>Equations of motion</li>
+    <li>Centre of mass</li>
+    <li>Rotational motion</li>
+    <li>Moment of inertia</li>
+  </ul>
+</section>
 
+<section id="sta101">
+  <h2>STA 101 – Statistics</h2>
+  <ul>
+    <li>Definition and types</li>
+    <li>Sources of data</li>
+    <li>Methods of data collection</li>
+    <li>Errors and approximation</li>
+    <li>Measures of variation</li>
+    <li>Skewness and kurtosis</li>
+    <li>Index numbers</li>
+  </ul>
+</section>
 
+<section id="mth101">
+  <h2>MTH 101 – Mathematics</h2>
+  <ul>
+    <li>Set theory</li>
+    <li>Real numbers</li>
+    <li>Sequences and series</li>
+    <li>Quadratic equations</li>
+    <li>Complex numbers <strong>(Very Important)</strong></li>
+    <li>De Morgan’s theorem</li>
+    <li>Trigonometry</li>
+  </ul>
+</section>
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TËXPËRT ÃCÅDÈMY</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
-    color: #eee;
-    margin: 0;
-    padding: 0;
+<section id="bio101">
+  <h2>BIO 101 – Biology</h2>
+  <ul>
+    <li>Ecology</li>
+    <li>Cell structure</li>
+    <li>Evolution</li>
+    <li>Genetics</li>
+    <li>Classification of living things</li>
+  </ul>
+</section>
+
+<section id="chm101">
+  <h2>CHM 101 – Chemistry</h2>
+  <ul>
+    <li>Atoms and molecules</li>
+    <li>Chemical reactions</li>
+    <li>Periodic table</li>
+    <li>Acids, bases and salts</li>
+    <li>Oxidation and reduction</li>
+  </ul>
+</section>
+
+<section id="gst111">
+  <h2>GST 111</h2>
+  <ul>
+    <li>Language</li>
+    <li>Listening skills</li>
+    <li>Speaking skills</li>
+    <li>Communication</li>
+  </ul>
+</section>
+
+<section id="gns105">
+  <h2>GNS 105</h2>
+  <ul>
+    <li>Agriculture in Nigeria</li>
+    <li>Rural development</li>
+    <li>Social institutions</li>
+    <li>Farming systems</li>
+  </ul>
+</section>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    event.target.classList.add("active");
   }
-  header {
-    background: #1e90ff;
-    padding: 1rem 2rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  nav {
-    background: #222;
-    padding: 0.5rem 2rem;
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-  }
-  nav button {
-    background: #1e90ff;
-    border: none;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    flex-shrink: 0;
-  }
-  nav button.active {
-    background: #0b5ed7;
-  }
-  main {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  section {
-    display: none;
-  }
-  section.active {
-    display: block;
-  }
-  h2 {
-    color: #1e90ff;
-    border-bottom: 2px solid #1e90ff;
-    padding-bottom: 0.3rem;
-  }
-  ul {
-    padding-left: 1.2rem;
-  }
-  li {
-    margin-bottom: 0.5rem;
-  }
-  footer {
+</script>
 
-
-<h2>STA 101 - Statistics 101 Topics</h2>
-    <ul>
-      <li>Definition</li>
-      <li>Types</li>
-      <li>Uses</li>
-      <li>STA data</li>
-      <li>Sources of Data</li>
-      <li>Method of collection of data</li>
-      <li>Errors and approximation</li>
-      <li>Measures of Partition</li>
-      <li>Measuring of variation (diffraction variance)</li>
-      <li>Skewness and Kurtosis</li>
-      <li>Rate and Index number</li>
-    </ul>
-  </section>
-
-  <section id="mth101">
-    <h2>MTH 101 - Mathematics 101 Topics</h2>
-    <ul>
-      <li>Elementary set theory</li>
-      <li>Subset, union, intersection, compliment, Venn diagrams</li>
-      <li>Real numbers, integers, rational and irrational numbers</li>
-      <li>Mathematical Induction</li>
-      <li>Sequences and series</li>
-      <li>Theory of quadratic equation, binomial theorem</li>
-      <li>Complex number algebra of complex numbers</li>
-      <li>Degree diagram, De Morgan's theory, nth root of unity <strong>(Emphasize: Complex Index)</strong></li>
-      <li>Circular measure, trigonometric functions of any magnitude, addition of vector formula</li>
-    </ul>
-  </section>
-
-  <section id="cos101">
-    <h2>COS 101 - Introduction to Computer Science Topics</h2>
-    <ul>
-      <li>Brief History on Computing</li>
-
-<li>Chemical reaction</li>
-      <li>Electronic configuration</li>
-      <li>Periodic table, periodicity</li>
-      <li>State of matter</li>
-      <li>Valency, Radioactivity</li>
-      <li>Acid, bases and Salt</li>
-      <li>Oxidation & reduction</li>
-      <li>Faraday law</li>
-      <li>Electrolysis</li>
-      <li>Equilibrium</li>
-    </ul>
-  </section>
-
-  <section id="gst111">
-    <h2>GST 111 Topics</h2>
-    <ul>
-      <li>What is Language?</li>
-      <li>Some Features of Human Language</li>
-      <li>Language Skills</li>
-      <li>Functions of Language</li>
-      <li>Levels of Linguistic Analysis</li>
-      <li>Causes of Poor Listening</li>
-      <li>Guides for Effective Listening</li>
-      <li>The Speaking Skill</li>
-    </ul>
-  </section>
-
-  <section id="gns105">
-    <h2>GNS 105 Topics</h2>
-    <ul>
-      <li>Historical development of agriculture in Nigeria</li>
-      <li>Later efforts at Agricultural Development in Nigeria</li>
-      <li>Roles of Agriculture in National Development</li>
-      <li>The Challenges of Agriculture in Nigeria</li>
-      <li>Distinguishing Factors Responsible for Rural-Urban Differentiation</li>
-      <li>Rural Social Institutions in Nigeria</li>
-      <li>Family Institution</li>
-      <li>Marriage Institution</li>
-
-<li>Education as an Institution in Rural Nigeria</li>
-      <li>Religion and Belief Systems in Rural Nigeria</li>
-      <li>Rural Economic Institutions in Nigeria</li>
-      <li>Problems of Rural Development in Nigeria</li>
-      <li>The Concept of Rural Development</li>
-      <li>Significance of Rural Development Effort</li>
-      <li>Cultural Practices</li>
-      <li>Farming Systems and Agricultural Systems</li>
-      <li>Farming/Cropping Practices</li>
-    </ul>
-  </section>
-
-  <section id="gst">
-    <h2>GST Topics</h2>
-    <ul>
-      <li>Overview
 </body>
 </html>
-
-
