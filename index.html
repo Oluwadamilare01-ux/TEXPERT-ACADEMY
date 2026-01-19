@@ -1,177 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TEXPERT ACADEMY</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>TEXPERT ACADEMY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      background: #0f172a;
-      color: #f8fafc;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  color:#f8fafc;
+}
+header{
+  background:#020617;
+  padding:20px;
+  text-align:center;
+}
+header h1{
+  color:#38bdf8;
+  margin:0;
+}
+.course{
+  background:#020617;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+}
+.course h2{
+  color:#38bdf8;
+  cursor:pointer;
+}
+.content{
+  display:none;
+  margin-top:15px;
+}
+button{
+  background:#38bdf8;
+  border:none;
+  padding:8px 14px;
+  margin:5px 0;
+  border-radius:6px;
+  cursor:pointer;
+}
+.score{
+  margin-top:10px;
+  font-weight:bold;
+  color:#22c55e;
+}
+ul{
+  padding-left:20px;
+}
+.note{
+  background:#020617;
+  padding:10px;
+  border-left:4px solid #38bdf8;
+  margin:10px 0;
+}
+</style>
 
-    h1, h2, h3 {
-      color: #38bdf8;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    nav button {
-      background: #1e293b;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    nav button.active {
-      background: #38bdf8;
-      color: #020617;
-    }
-
-    section {
-      display: none;
-      background: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .box {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-  </style>
+<script>
+function toggle(id){
+  const el=document.getElementById(id);
+  el.style.display = el.style.display==="block"?"none":"block";
+}
+</script>
 </head>
 
 <body>
 
+<header>
 <h1>TEXPERT ACADEMY</h1>
-<p>University Science Courses – Notes, Quiz, Test & Exams</p>
-
-<nav>
-  <button class="active" onclick="showSection('cos101', event)">COS 101</button>
-  <button onclick="showSection('phy101', event)">PHY 101</button>
-  <button onclick="showSection('mth101', event)">MTH 101</button>
-</nav>
+<p>Exam-Focused Notes | Tests | Quizzes</p>
+</header>
 
 <!-- COS 101 -->
-<section id="cos101" class="active">
-  <h2>COS 101 – Introduction to Computer Science</h2>
+<div class="course">
+<h2 onclick="toggle('cos')">COS 101 – Introduction to Computer Science</h2>
+<div class="content" id="cos">
+<p><b>Course Outline</b></p>
+<ul>
+<li>Computer components</li>
+<li>Hardware & Software</li>
+<li>Internet & society</li>
+</ul>
 
-  <div class="box">
-    <h3>📘 Notes</h3>
-    <ul>
-      <li>Components of a computer</li>
-      <li>Hardware, software & humanware</li>
-      <li>Input and output devices</li>
-      <li>Internet and society</li>
-    </ul>
-  </div>
+<div class="note">
+<b>Notes:</b><br>
+A computer is an electronic device that accepts data, processes it and produces output. Hardware refers to physical parts while software refers to programs.
+</div>
 
-  <div class="box">
-    <h3>📝 Quiz</h3>
-    <ul>
-      <li>Define hardware</li>
-      <li>List 3 input devices</li>
-      <li>What is software?</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>🧪 Test</h3>
-    <ul>
-      <li>Explain the functions of CPU</li>
-      <li>Differentiate RAM and ROM</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>🎓 Exam</h3>
-    <ul>
-      <li>Discuss the evolution of computers</li>
-      <li>Explain internet applications</li>
-    </ul>
-  </div>
-</section>
+<button>Take Quiz</button>
+<button>Take Test</button>
+<button>Exam Practice</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
 
 <!-- PHY 101 -->
-<section id="phy101">
-  <h2>PHY 101 – Physics</h2>
+<div class="course">
+<h2 onclick="toggle('phy')">PHY 101 – Physics</h2>
+<div class="content" id="phy">
+<ul>
+<li>Vectors and scalars</li>
+<li>Newton’s laws</li>
+<li>Motion</li>
+</ul>
 
-  <div class="box">
-    <h3>📘 Notes</h3>
-    <ul>
-      <li>Units and dimensions</li>
-      <li>Newton’s laws</li>
-      <li>Motion and forces</li>
-    </ul>
-  </div>
+<div class="note">
+<b>Notes:</b><br>
+Vectors have magnitude and direction. Newton’s first law states that a body remains at rest or uniform motion unless acted upon by an external force.
+</div>
 
-  <div class="box">
-    <h3>📝 Quiz</h3>
-    <ul>
-      <li>State Newton’s first law</li>
-      <li>Define velocity</li>
-    </ul>
-  </div>
-</section>
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
 
 <!-- MTH 101 -->
-<section id="mth101">
-  <h2>MTH 101 – Mathematics</h2>
+<div class="course">
+<h2 onclick="toggle('mth')">MTH 101 – Mathematics</h2>
+<div class="content" id="mth">
+<ul>
+<li>Set theory</li>
+<li>Sequences & series</li>
+<li><b>Complex Numbers (VERY IMPORTANT)</b></li>
+</ul>
 
-  <div class="box">
-    <h3>📘 Notes</h3>
-    <ul>
-      <li>Set theory</li>
-      <li>Real numbers</li>
-      <li>Quadratic equations</li>
-    </ul>
-  </div>
+<div class="note">
+<b>Complex Numbers:</b><br>
+A complex number is of the form a + bi where i² = −1.  
+<b>Complex Index:</b>  
+zⁿ = rⁿ(cos nθ + i sin nθ).  
+This comes out often in tests & exams.
+</div>
 
-  <div class="box">
-    <h3>🧪 Test</h3>
-    <ul>
-      <li>Solve quadratic equations</li>
-      <li>Explain De Morgan’s theorem</li>
-    </ul>
-  </div>
-</section>
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
 
-<script>
-  function showSection(id, event) {
-    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-    document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-    event.target.classList.add("active");
-  }
-</script>
+<!-- STA 101 -->
+<div class="course">
+<h2 onclick="toggle('sta')">STA 101 – Statistics</h2>
+<div class="content" id="sta">
+<ul>
+<li>Data</li>
+<li>Mean, Median, Mode</li>
+<li>Variation</li>
+</ul>
+
+<div class="note">
+Statistics deals with collection, analysis and interpretation of data. Mean is average, median is middle value.
+</div>
+
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
+
+<!-- BIO 101 -->
+<div class="course">
+<h2 onclick="toggle('bio')">BIO 101 – Biology</h2>
+<div class="content" id="bio">
+<ul>
+<li>Cell structure</li>
+<li>Ecology</li>
+<li>Genetics</li>
+</ul>
+
+<div class="note">
+The cell is the basic unit of life. Ecology studies interactions between organisms and their environment.
+</div>
+
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
+
+<!-- CHM 101 -->
+<div class="course">
+<h2 onclick="toggle('chm')">CHM 101 – Chemistry</h2>
+<div class="content" id="chm">
+<ul>
+<li>Atoms</li>
+<li>Periodic table</li>
+<li>Acids & bases</li>
+</ul>
+
+<div class="note">
+Atoms consist of protons, neutrons and electrons. Acids release H⁺ ions while bases release OH⁻.
+</div>
+
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
+
+<!-- GST 111 -->
+<div class="course">
+<h2 onclick="toggle('gst')">GST 111 – Communication Skills</h2>
+<div class="content" id="gst">
+<ul>
+<li>Language</li>
+<li>Listening skills</li>
+<li>Speaking</li>
+</ul>
+
+<div class="note">
+Effective communication involves listening, speaking, reading and writing.
+</div>
+
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
+
+<!-- GNS 105 -->
+<div class="course">
+<h2 onclick="toggle('gns')">GNS 105 – Rural Development</h2>
+<div class="content" id="gns">
+<ul>
+<li>Agriculture</li>
+<li>Rural institutions</li>
+<li>Development problems</li>
+</ul>
+
+<div class="note">
+Rural development focuses on improving the living standards of people in rural areas through agriculture and social services.
+</div>
+
+<button>Quiz</button>
+<button>Test</button>
+<button>Exam</button>
+<div class="score">Score: 0%</div>
+</div>
+</div>
 
 </body>
 </html>
-
