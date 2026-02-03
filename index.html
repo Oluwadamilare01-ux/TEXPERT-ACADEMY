@@ -7,247 +7,99 @@
 
 <style>
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0f172a;
-  color:#f8fafc;
+background:#0f172a;
+color:white;
+font-family:Arial;
+padding:20px;
 }
-header{
-  background:#020617;
-  padding:20px;
-  text-align:center;
-}
-header h1{
-  color:#38bdf8;
-  margin:0;
-}
+h1{color:#38bdf8;text-align:center}
 .course{
-  background:#020617;
-  margin:20px;
-  padding:20px;
-  border-radius:12px;
+background:#020617;
+margin:15px 0;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
 }
-.course h2{
-  color:#38bdf8;
-  cursor:pointer;
-}
-.content{
-  display:none;
-  margin-top:15px;
-}
+.course h2{color:#38bdf8}
+.content{display:none;margin-top:10px}
 button{
-  background:#38bdf8;
-  border:none;
-  padding:8px 14px;
-  margin:5px 0;
-  border-radius:6px;
-  cursor:pointer;
+background:#38bdf8;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+margin:5px 5px 5px 0;
 }
-.score{
-  margin-top:10px;
-  font-weight:bold;
-  color:#22c55e;
-}
-ul{
-  padding-left:20px;
-}
-.note{
-  background:#020617;
-  padding:10px;
-  border-left:4px solid #38bdf8;
-  margin:10px 0;
-}
+.score{color:#22c55e;font-weight:bold}
 </style>
-
-<script>
-function toggle(id){
-  const el=document.getElementById(id);
-  el.style.display = el.style.display==="block"?"none":"block";
-}
-</script>
 </head>
 
 <body>
 
-<header>
 <h1>TEXPERT ACADEMY</h1>
-<p>Exam-Focused Notes | Tests | Quizzes</p>
-</header>
+<p style="text-align:center">Exam-Focused Notes | Tests | Quizzes</p>
 
-<!-- COS 101 -->
-<div class="course">
-<h2 onclick="toggle('cos')">COS 101 – Introduction to Computer Science</h2>
+<div class="course" onclick="toggle('cos')">
+<h2>COS 101 – Computer Science</h2>
 <div class="content" id="cos">
-<p><b>Course Outline</b></p>
 <ul>
 <li>Computer components</li>
 <li>Hardware & Software</li>
-<li>Internet & society</li>
+<li>Internet & Society</li>
 </ul>
-
-<div class="note">
-<b>Notes:</b><br>
-A computer is an electronic device that accepts data, processes it and produces output. Hardware refers to physical parts while software refers to programs.
-</div>
-
-<button>Take Quiz</button>
-<button>Take Test</button>
-<button>Exam Practice</button>
-<div class="score">Score: 0%</div>
+<p><b>Note:</b> A computer accepts data, processes it and produces output.</p>
+<button onclick="quiz(event)">Take Quiz</button>
+<button onclick="test(event)">Take Test</button>
+<p class="score" id="score1">Score: 0%</p>
 </div>
 </div>
 
-<!-- PHY 101 -->
-<div class="course">
-<h2 onclick="toggle('phy')">PHY 101 – Physics</h2>
+<div class="course" onclick="toggle('phy')">
+<h2>PHY 101 – Physics</h2>
 <div class="content" id="phy">
 <ul>
-<li>Vectors and scalars</li>
-<li>Newton’s laws</li>
 <li>Motion</li>
+<li>Forces</li>
+<li>Energy</li>
 </ul>
-
-<div class="note">
-<b>Notes:</b><br>
-Vectors have magnitude and direction. Newton’s first law states that a body remains at rest or uniform motion unless acted upon by an external force.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
+<p><b>Note:</b> Physics deals with matter and energy.</p>
+<button onclick="quiz(event)">Take Quiz</button>
+<button onclick="test(event)">Take Test</button>
+<p class="score">Score: 0%</p>
 </div>
 </div>
 
-<!-- MTH 101 -->
-<div class="course">
-<h2 onclick="toggle('mth')">MTH 101 – Mathematics</h2>
+<div class="course" onclick="toggle('mth')">
+<h2>MTH 101 – Mathematics</h2>
 <div class="content" id="mth">
 <ul>
-<li>Set theory</li>
-<li>Sequences & series</li>
-<li><b>Complex Numbers (VERY IMPORTANT)</b></li>
+<li>Sets</li>
+<li>Algebra</li>
+<li>Trigonometry</li>
 </ul>
-
-<div class="note">
-<b>Complex Numbers:</b><br>
-A complex number is of the form a + bi where i² = −1.  
-<b>Complex Index:</b>  
-zⁿ = rⁿ(cos nθ + i sin nθ).  
-This comes out often in tests & exams.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
+<p><b>Note:</b> Mathematics studies numbers and relationships.</p>
+<button onclick="quiz(event)">Take Quiz</button>
+<button onclick="test(event)">Take Test</button>
+<p class="score">Score: 0%</p>
 </div>
 </div>
 
-<!-- STA 101 -->
-<div class="course">
-<h2 onclick="toggle('sta')">STA 101 – Statistics</h2>
-<div class="content" id="sta">
-<ul>
-<li>Data</li>
-<li>Mean, Median, Mode</li>
-<li>Variation</li>
-</ul>
+<script>
+function toggle(id){
+let x=document.getElementById(id);
+x.style.display = x.style.display==="block" ? "none" : "block";
+}
 
-<div class="note">
-Statistics deals with collection, analysis and interpretation of data. Mean is average, median is middle value.
-</div>
+function quiz(e){
+e.stopPropagation();
+alert("Quiz started! You scored 80%");
+}
 
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
-</div>
-</div>
-
-<!-- BIO 101 -->
-<div class="course">
-<h2 onclick="toggle('bio')">BIO 101 – Biology</h2>
-<div class="content" id="bio">
-<ul>
-<li>Cell structure</li>
-<li>Ecology</li>
-<li>Genetics</li>
-</ul>
-
-<div class="note">
-The cell is the basic unit of life. Ecology studies interactions between organisms and their environment.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
-</div>
-</div>
-
-<!-- CHM 101 -->
-<div class="course">
-<h2 onclick="toggle('chm')">CHM 101 – Chemistry</h2>
-<div class="content" id="chm">
-<ul>
-<li>Atoms</li>
-<li>Periodic table</li>
-<li>Acids & bases</li>
-</ul>
-
-<div class="note">
-Atoms consist of protons, neutrons and electrons. Acids release H⁺ ions while bases release OH⁻.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
-</div>
-</div>
-
-<!-- GST 111 -->
-<div class="course">
-<h2 onclick="toggle('gst')">GST 111 – Communication Skills</h2>
-<div class="content" id="gst">
-<ul>
-<li>Language</li>
-<li>Listening skills</li>
-<li>Speaking</li>
-</ul>
-
-<div class="note">
-Effective communication involves listening, speaking, reading and writing.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
-</div>
-</div>
-
-<!-- GNS 105 -->
-<div class="course">
-<h2 onclick="toggle('gns')">GNS 105 – Rural Development</h2>
-<div class="content" id="gns">
-<ul>
-<li>Agriculture</li>
-<li>Rural institutions</li>
-<li>Development problems</li>
-</ul>
-
-<div class="note">
-Rural development focuses on improving the living standards of people in rural areas through agriculture and social services.
-</div>
-
-<button>Quiz</button>
-<button>Test</button>
-<button>Exam</button>
-<div class="score">Score: 0%</div>
-</div>
-</div>
+function test(e){
+e.stopPropagation();
+alert("Test started! You scored 70%");
+}
+</script>
 
 </body>
 </html>
