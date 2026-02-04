@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>TEXPERT ACADEMY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 body{
 background:#0f172a;
@@ -12,15 +11,17 @@ color:white;
 font-family:Arial;
 padding:20px;
 }
-h1{color:#38bdf8;text-align:center}
+h1{text-align:center;color:#38bdf8}
 .course{
 background:#020617;
 margin:15px 0;
 padding:15px;
 border-radius:10px;
+}
+.course h2{
+color:#38bdf8;
 cursor:pointer;
 }
-.course h2{color:#38bdf8}
 .content{display:none;margin-top:10px}
 button{
 background:#38bdf8;
@@ -37,67 +38,168 @@ margin:5px 5px 5px 0;
 <body>
 
 <h1>TEXPERT ACADEMY</h1>
-<p style="text-align:center">Exam-Focused Notes | Tests | Quizzes</p>
+<p style="text-align:center">Exam Focused Notes | Tests | Quizzes</p>
 
-<div class="course" onclick="toggle('cos')">
-<h2>COS 101 – Computer Science</h2>
+<!-- COS 101 -->
+<div class="course">
+<h2 onclick="toggle('cos')">COS 101 – Computer Science</h2>
 <div class="content" id="cos">
 <ul>
 <li>Computer components</li>
-<li>Hardware & Software</li>
+<li>Input & Output devices</li>
+<li>Hardware, Software & Humanware</li>
 <li>Internet & Society</li>
+<li>Features of computing</li>
 </ul>
-<p><b>Note:</b> A computer accepts data, processes it and produces output.</p>
-<button onclick="quiz(event)">Take Quiz</button>
-<button onclick="test(event)">Take Test</button>
-<p class="score" id="score1">Score: 0%</p>
+<p><b>Note:</b> A computer is an electronic device that processes data into information.</p>
+<button onclick="quiz('s1')">Quiz</button>
+<button onclick="test('s1')">Test</button>
+<button onclick="exam('s1')">Exam</button>
+<p class="score" id="s1">Score: 0%</p>
 </div>
 </div>
 
-<div class="course" onclick="toggle('phy')">
-<h2>PHY 101 – Physics</h2>
+<!-- PHY 101 -->
+<div class="course">
+<h2 onclick="toggle('phy')">PHY 101 – Physics</h2>
 <div class="content" id="phy">
 <ul>
 <li>Motion</li>
 <li>Forces</li>
 <li>Energy</li>
+<li>Newton’s laws</li>
 </ul>
-<p><b>Note:</b> Physics deals with matter and energy.</p>
-<button onclick="quiz(event)">Take Quiz</button>
-<button onclick="test(event)">Take Test</button>
-<p class="score">Score: 0%</p>
+<p><b>Note:</b> Physics deals with matter, motion and energy.</p>
+<button onclick="quiz('s2')">Quiz</button>
+<button onclick="test('s2')">Test</button>
+<button onclick="exam('s2')">Exam</button>
+<p class="score" id="s2">Score: 0%</p>
 </div>
 </div>
 
-<div class="course" onclick="toggle('mth')">
-<h2>MTH 101 – Mathematics</h2>
+<!-- STA 101 -->
+<div class="course">
+<h2 onclick="toggle('sta')">STA 101 – Statistics</h2>
+<div class="content" id="sta">
+<ul>
+<li>Definition of statistics</li>
+<li>Sources of data</li>
+<li>Collection of data</li>
+<li>Measures of variation</li>
+</ul>
+<p><b>Note:</b> Statistics is the science of collecting and analysing data.</p>
+<button onclick="quiz('s3')">Quiz</button>
+<button onclick="test('s3')">Test</button>
+<button onclick="exam('s3')">Exam</button>
+<p class="score" id="s3">Score: 0%</p>
+</div>
+</div>
+
+<!-- MTH 101 -->
+<div class="course">
+<h2 onclick="toggle('mth')">MTH 101 – Mathematics</h2>
 <div class="content" id="mth">
 <ul>
-<li>Sets</li>
+<li>Set theory</li>
 <li>Algebra</li>
+<li>Quadratic equations</li>
 <li>Trigonometry</li>
 </ul>
-<p><b>Note:</b> Mathematics studies numbers and relationships.</p>
-<button onclick="quiz(event)">Take Quiz</button>
-<button onclick="test(event)">Take Test</button>
-<p class="score">Score: 0%</p>
+<p><b>Note:</b> Mathematics deals with numbers and their relationships.</p>
+<button onclick="quiz('s4')">Quiz</button>
+<button onclick="test('s4')">Test</button>
+<button onclick="exam('s4')">Exam</button>
+<p class="score" id="s4">Score: 0%</p>
+</div>
+</div>
+
+<!-- BIO 101 -->
+<div class="course">
+<h2 onclick="toggle('bio')">BIO 101 – Biology</h2>
+<div class="content" id="bio">
+<ul>
+<li>Cell structure</li>
+<li>Ecology</li>
+<li>Genetics</li>
+<li>Classification</li>
+</ul>
+<p><b>Note:</b> Biology is the study of living organisms.</p>
+<button onclick="quiz('s5')">Quiz</button>
+<button onclick="test('s5')">Test</button>
+<button onclick="exam('s5')">Exam</button>
+<p class="score" id="s5">Score: 0%</p>
+</div>
+</div>
+
+<!-- CHM 101 -->
+<div class="course">
+<h2 onclick="toggle('chm')">CHM 101 – Chemistry</h2>
+<div class="content" id="chm">
+<ul>
+<li>Atoms & molecules</li>
+<li>Chemical reactions</li>
+<li>Acids & bases</li>
+<li>Electrolysis</li>
+</ul>
+<p><b>Note:</b> Chemistry studies substances and reactions.</p>
+<button onclick="quiz('s6')">Quiz</button>
+<button onclick="test('s6')">Test</button>
+<button onclick="exam('s6')">Exam</button>
+<p class="score" id="s6">Score: 0%</p>
+</div>
+</div>
+
+<!-- GST 111 -->
+<div class="course">
+<h2 onclick="toggle('gst')">GST 111</h2>
+<div class="content" id="gst">
+<ul>
+<li>Language</li>
+<li>Listening skills</li>
+<li>Speaking skills</li>
+<li>Communication</li>
+</ul>
+<p><b>Note:</b> GST improves communication and language skills.</p>
+<button onclick="quiz('s7')">Quiz</button>
+<button onclick="test('s7')">Test</button>
+<button onclick="exam('s7')">Exam</button>
+<p class="score" id="s7">Score: 0%</p>
+</div>
+</div>
+
+<!-- GNS 105 -->
+<div class="course">
+<h2 onclick="toggle('gns')">GNS 105</h2>
+<div class="content" id="gns">
+<ul>
+<li>Agriculture in Nigeria</li>
+<li>Rural development</li>
+<li>Farming systems</li>
+</ul>
+<p><b>Note:</b> GNS studies agriculture and rural society.</p>
+<button onclick="quiz('s8')">Quiz</button>
+<button onclick="test('s8')">Test</button>
+<button onclick="exam('s8')">Exam</button>
+<p class="score" id="s8">Score: 0%</p>
 </div>
 </div>
 
 <script>
 function toggle(id){
 let x=document.getElementById(id);
-x.style.display = x.style.display==="block" ? "none" : "block";
+x.style.display = (x.style.display==="block") ? "none" : "block";
 }
-
-function quiz(e){
-e.stopPropagation();
-alert("Quiz started! You scored 80%");
+function quiz(id){
+document.getElementById(id).innerText="Score: 80%";
+alert("Quiz done! You scored 80%");
 }
-
-function test(e){
-e.stopPropagation();
-alert("Test started! You scored 70%");
+function test(id){
+document.getElementById(id).innerText="Score: 70%";
+alert("Test done! You scored 70%");
+}
+function exam(id){
+document.getElementById(id).innerText="Score: 90%";
+alert("Exam done! You scored 90%");
 }
 </script>
 
