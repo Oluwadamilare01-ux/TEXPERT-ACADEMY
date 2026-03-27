@@ -2,204 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEXPERT ACADEMY</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body{
-background:#0f172a;
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
-font-family:Arial;
+}
+
+header{
+text-align:center;
 padding:20px;
-}
-h1{text-align:center;color:#38bdf8}
-.course{
+font-size:28px;
+font-weight:bold;
 background:#020617;
-margin:15px 0;
-padding:15px;
-border-radius:10px;
-}
-.course h2{
 color:#38bdf8;
-cursor:pointer;
 }
-.content{display:none;margin-top:10px}
-button{
-background:#38bdf8;
-border:none;
-padding:8px 14px;
-border-radius:6px;
-cursor:pointer;
-margin:5px 5px 5px 0;
+
+.container{
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
-.score{color:#22c55e;font-weight:bold}
+
+.card{
+background:linear-gradient(145deg,#1e293b,#0f172a);
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.course-title{
+font-size:18px;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.content{
+display:none;
+margin-top:10px;
+font-size:14px;
+color:#cbd5f5;
+}
 </style>
+
 </head>
 
 <body>
 
-<h1>TEXPERT ACADEMY</h1>
-<p style="text-align:center">Exam Focused Notes | Tests | Quizzes</p>
+<header>TEXPERT ACADEMY</header>
 
-<!-- COS 101 -->
-<div class="course">
-<h2 onclick="toggle('cos')">COS 101 – Computer Science</h2>
-<div class="content" id="cos">
-<ul>
-<li>Computer components</li>
-<li>Input & Output devices</li>
-<li>Hardware, Software & Humanware</li>
-<li>Internet & Society</li>
-<li>Features of computing</li>
-</ul>
-<p><b>Note:</b> A computer is an electronic device that processes data into information.</p>
-<button onclick="quiz('s1')">Quiz</button>
-<button onclick="test('s1')">Test</button>
-<button onclick="exam('s1')">Exam</button>
-<p class="score" id="s1">Score: 0%</p>
-</div>
+<div class="container">
+
+<div class="card" onclick="toggle(this)">
+<div class="course-title">COS 102 – Problem Solving</div>
+<div class="content">Learn logic, algorithms, and structured thinking.</div>
 </div>
 
-<!-- PHY 101 -->
-<div class="course">
-<h2 onclick="toggle('phy')">PHY 101 – Physics</h2>
-<div class="content" id="phy">
-<ul>
-<li>Motion</li>
-<li>Forces</li>
-<li>Energy</li>
-<li>Newton’s laws</li>
-</ul>
-<p><b>Note:</b> Physics deals with matter, motion and energy.</p>
-<button onclick="quiz('s2')">Quiz</button>
-<button onclick="test('s2')">Test</button>
-<button onclick="exam('s2')">Exam</button>
-<p class="score" id="s2">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">GST 112 – Nigerian People & Culture</div>
+<div class="content">Explore Nigerian heritage, traditions, and values.</div>
 </div>
 
-<!-- STA 101 -->
-<div class="course">
-<h2 onclick="toggle('sta')">STA 101 – Statistics</h2>
-<div class="content" id="sta">
-<ul>
-<li>Definition of statistics</li>
-<li>Sources of data</li>
-<li>Collection of data</li>
-<li>Measures of variation</li>
-</ul>
-<p><b>Note:</b> Statistics is the science of collecting and analysing data.</p>
-<button onclick="quiz('s3')">Quiz</button>
-<button onclick="test('s3')">Test</button>
-<button onclick="exam('s3')">Exam</button>
-<p class="score" id="s3">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">MTH 102 – Elementary Mathematics II</div>
+<div class="content">Focus on calculus, algebra, and trigonometry.</div>
 </div>
 
-<!-- MTH 101 -->
-<div class="course">
-<h2 onclick="toggle('mth')">MTH 101 – Mathematics</h2>
-<div class="content" id="mth">
-<ul>
-<li>Set theory</li>
-<li>Algebra</li>
-<li>Quadratic equations</li>
-<li>Trigonometry</li>
-</ul>
-<p><b>Note:</b> Mathematics deals with numbers and their relationships.</p>
-<button onclick="quiz('s4')">Quiz</button>
-<button onclick="test('s4')">Test</button>
-<button onclick="exam('s4')">Exam</button>
-<p class="score" id="s4">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">OOUCSC 102 – VB Programming Lab</div>
+<div class="content">Practical Visual Basic programming skills.</div>
 </div>
 
-<!-- BIO 101 -->
-<div class="course">
-<h2 onclick="toggle('bio')">BIO 101 – Biology</h2>
-<div class="content" id="bio">
-<ul>
-<li>Cell structure</li>
-<li>Ecology</li>
-<li>Genetics</li>
-<li>Classification</li>
-</ul>
-<p><b>Note:</b> Biology is the study of living organisms.</p>
-<button onclick="quiz('s5')">Quiz</button>
-<button onclick="test('s5')">Test</button>
-<button onclick="exam('s5')">Exam</button>
-<p class="score" id="s5">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">PHY 102 – General Physics II</div>
+<div class="content">Covers waves, optics, and electricity.</div>
 </div>
 
-<!-- CHM 101 -->
-<div class="course">
-<h2 onclick="toggle('chm')">CHM 101 – Chemistry</h2>
-<div class="content" id="chm">
-<ul>
-<li>Atoms & molecules</li>
-<li>Chemical reactions</li>
-<li>Acids & bases</li>
-<li>Electrolysis</li>
-</ul>
-<p><b>Note:</b> Chemistry studies substances and reactions.</p>
-<button onclick="quiz('s6')">Quiz</button>
-<button onclick="test('s6')">Test</button>
-<button onclick="exam('s6')">Exam</button>
-<p class="score" id="s6">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">PHY 108 – Practical Physics II</div>
+<div class="content">Laboratory experiments and measurements.</div>
 </div>
 
-<!-- GST 111 -->
-<div class="course">
-<h2 onclick="toggle('gst')">GST 111</h2>
-<div class="content" id="gst">
-<ul>
-<li>Language</li>
-<li>Listening skills</li>
-<li>Speaking skills</li>
-<li>Communication</li>
-</ul>
-<p><b>Note:</b> GST improves communication and language skills.</p>
-<button onclick="quiz('s7')">Quiz</button>
-<button onclick="test('s7')">Test</button>
-<button onclick="exam('s7')">Exam</button>
-<p class="score" id="s7">Score: 0%</p>
-</div>
+<div class="card" onclick="toggle(this)">
+<div class="course-title">STA 112 – Statistical Computing I</div>
+<div class="content">Intro to statistical tools and computing.</div>
 </div>
 
-<!-- GNS 105 -->
-<div class="course">
-<h2 onclick="toggle('gns')">GNS 105</h2>
-<div class="content" id="gns">
-<ul>
-<li>Agriculture in Nigeria</li>
-<li>Rural development</li>
-<li>Farming systems</li>
-</ul>
-<p><b>Note:</b> GNS studies agriculture and rural society.</p>
-<button onclick="quiz('s8')">Quiz</button>
-<button onclick="test('s8')">Test</button>
-<button onclick="exam('s8')">Exam</button>
-<p class="score" id="s8">Score: 0%</p>
-</div>
 </div>
 
 <script>
-function toggle(id){
-let x=document.getElementById(id);
-x.style.display = (x.style.display==="block") ? "none" : "block";
-}
-function quiz(id){
-document.getElementById(id).innerText="Score: 80%";
-alert("Quiz done! You scored 80%");
-}
-function test(id){
-document.getElementById(id).innerText="Score: 70%";
-alert("Test done! You scored 70%");
-}
-function exam(id){
-document.getElementById(id).innerText="Score: 90%";
-alert("Exam done! You scored 90%");
+function toggle(card){
+let content = card.querySelector(".content");
+content.style.display = content.style.display === "block" ? "none" : "block";
 }
 </script>
 
