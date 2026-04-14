@@ -9,8 +9,8 @@
 body{
 margin:0;
 font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg,#0f172a,#1e3a8a);
-color:white;
+background:#0a0a0a;
+color:#fff;
 }
 
 header{
@@ -18,8 +18,9 @@ text-align:center;
 padding:20px;
 font-size:28px;
 font-weight:bold;
-background:#020617;
-color:#38bdf8;
+background:#111;
+color:#facc15;
+letter-spacing:2px;
 }
 
 .container{
@@ -30,21 +31,23 @@ gap:20px;
 }
 
 .card{
-background:linear-gradient(145deg,#1e293b,#0f172a);
+background:#111;
 padding:20px;
 border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
+box-shadow:0 8px 20px rgba(0,0,0,0.6);
 cursor:pointer;
 transition:0.3s;
+border:1px solid #222;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-5px);
+border:1px solid #facc15;
 }
 
 .course-title{
 font-size:18px;
-color:#38bdf8;
+color:#facc15;
 margin-bottom:10px;
 }
 
@@ -52,8 +55,9 @@ margin-bottom:10px;
 display:none;
 margin-top:10px;
 font-size:14px;
-color:#cbd5f5;
+color:#ccc;
 }
+
 </style>
 
 </head>
@@ -71,12 +75,12 @@ color:#cbd5f5;
 
 <div class="card" onclick="toggle(this)">
 <div class="course-title">GST 112 – Nigerian People & Culture</div>
-<div class="content">Explore Nigerian heritage, traditions, and values.</div>
+<div class="content">Explore Nigerian traditions, culture and values.</div>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <div class="course-title">MTH 102 – Elementary Mathematics II</div>
-<div class="content">Focus on calculus, algebra, and trigonometry.</div>
+<div class="content">Algebra, calculus and trigonometry basics.</div>
 </div>
 
 <div class="card" onclick="toggle(this)">
@@ -86,17 +90,17 @@ color:#cbd5f5;
 
 <div class="card" onclick="toggle(this)">
 <div class="course-title">PHY 102 – General Physics II</div>
-<div class="content">Covers waves, optics, and electricity.</div>
+<div class="content">Covers waves, optics and electricity.</div>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <div class="course-title">PHY 108 – Practical Physics II</div>
-<div class="content">Laboratory experiments and measurements.</div>
+<div class="content">Physics lab experiments and measurements.</div>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <div class="course-title">STA 112 – Statistical Computing I</div>
-<div class="content">Intro to statistical tools and computing.</div>
+<div class="content">Introduction to statistical tools and computing.</div>
 </div>
 
 </div>
